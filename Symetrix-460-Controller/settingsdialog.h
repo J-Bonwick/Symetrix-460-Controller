@@ -18,10 +18,11 @@ public:
     ~SettingsDialog();
 public slots:
     void applySettings();
+    void fillPortBox();
 
 private:
     Ui::SettingsDialog *ui;
-    void fillPortBox();
+    //void fillPortBox();
     void saveSettings();
     void readSettings();
 };

@@ -12,6 +12,7 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     readSettings();
 
     connect(ui->buttonBox, &QDialogButtonBox::accepted, this, &SettingsDialog::applySettings);
+    connect(ui->refreshButton, &QPushButton::pressed, this, &SettingsDialog::fillPortBox);
 }
 
 SettingsDialog::~SettingsDialog()
@@ -26,6 +27,7 @@ void SettingsDialog::applySettings()
 
 void SettingsDialog::fillPortBox()
 {
+    ui->portBox->clear();
     const auto ports = QSerialPortInfo::availablePorts();
     for(const QSerialPortInfo &port : ports){
         ui->portBox->addItem(port.portName());
