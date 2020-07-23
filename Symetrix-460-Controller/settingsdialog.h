@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QSettings>
+#include <QSerialPortInfo>
 
 namespace Ui {
 class SettingsDialog;
@@ -20,6 +21,7 @@ public slots:
 
 private:
     Ui::SettingsDialog *ui;
+    void fillPortBox();
     void saveSettings();
     void readSettings();
 };
