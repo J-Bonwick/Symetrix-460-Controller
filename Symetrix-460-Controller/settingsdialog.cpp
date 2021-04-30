@@ -10,6 +10,7 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
 
     fillPortBox();
     readSettings();
+    this->setModal(true);
 
     connect(ui->buttonBox, &QDialogButtonBox::accepted, this, &SettingsDialog::applySettings);
     connect(ui->refreshButton, &QPushButton::pressed, this, &SettingsDialog::fillPortBox);
